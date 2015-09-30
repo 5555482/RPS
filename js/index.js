@@ -49,7 +49,7 @@ function choice (userChoice){
       userChoice.target.style.background ="silver";
       clearColor;
     }
-    else{txt.style.color="white";userChoice.target.style.background ="white";}
+    else{txt.style.color="silver";userChoice.target.style.background ="silver";}
 
     hearts(result,win,lose);
 }
