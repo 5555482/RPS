@@ -40,13 +40,13 @@ function choice (userChoice){
 
     var clearColor = setTimeout(function(){userChoice.target.style.background ="none";},1000);
     if(result == win ){
-      txt.style.color="green"; 
-      userChoice.target.style.background ="green"; 
+      txt.style.color="silver"; 
+      userChoice.target.style.background ="silver"; 
       clearColor;
   }
     else if(result == lose){
-      txt.style.color="green";
-      userChoice.target.style.background ="green";
+      txt.style.color="silver";
+      userChoice.target.style.background ="silver";
       clearColor;
     }
     else{txt.style.color="white";userChoice.target.style.background ="white";}
