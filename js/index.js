@@ -70,7 +70,7 @@ function hearts(result, win, lose){
       }
       else{alert('You are a losser!')}
         for(i = 0; i < hearts.length; i++){
-          hearts[i].style.color="green";
+          hearts[i].style.color="pink";
         }
         ur_hearts = 0; 
         computer_hearts = 0;
