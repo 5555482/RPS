@@ -1,22 +1,46 @@
 var txt = document.querySelector('#resultText');
 var ur_hearts = 0; 
 var computer_hearts = 0; 
+var prev_computere_choice = randomComputerChoice();
 
+function tacticalComputerChoise (prevChoice){
+  var result = "scissors";
+  if (prevChoice == "scissors") {
+      result = "rock";
+    }
+    else if (prevChoice == "rock") {
+      result = "paper";
+    }
+    return result;
+}
+
+function randomComputerChoice() {
+  var computerChoice = Math.random();
+  if (computerChoice < 0.34) {
+    computerChoice = "rock";
+  }
+  else if (computerChoice <= 0.67) {
+    computerChoice = "paper";
+  }
+  else {
+    computerChoice = "scissors";
+  }
+  return computerChoice;
+}
 
 function choice (userChoice){
     var result;
-    var computerChoice = Math.random();
-    var uChoice = userChoice.target.id;
-
-    if (computerChoice < 0.34) {
-      computerChoice = "rock";
-    }
-    else if (computerChoice <= 0.67) {
-      computerChoice = "paper";
+    var computerChoice;
+    var isTactical = document.getElementById("tactical").checked;
+    if (isTactical) {
+      computerChoice = tacticalComputerChoise(prev_computere_choice);
     }
     else {
-      computerChoice = "scissors";
+      computerChoice = randomComputerChoice();
     }
+    prev_computere_choice = computerChoice;
+    var uChoice = userChoice.target.id;
+
     //-------------
     var win = 'Computer: ' + computerChoice + '<span> You win!</span>';
     var lose = 'Computer: ' + computerChoice + '<span> Computer wins!</span>';
@@ -40,16 +64,16 @@ function choice (userChoice){
 
     var clearColor = setTimeout(function(){userChoice.target.style.background ="none";},1000);
     if(result == win ){
-      txt.style.color="silver"; 
-      userChoice.target.style.background ="silver"; 
+      txt.style.color="SlateGray"; 
+      userChoice.target.style.background ="WhiteSmoke"; 
       clearColor;
   }
     else if(result == lose){
-      txt.style.color="silver";
-      userChoice.target.style.background ="silver";
+      txt.style.color="SlateGray";
+      userChoice.target.style.background ="WhiteSmoke";
       clearColor;
     }
-    else{txt.style.color="silver";userChoice.target.style.background ="silver";}
+    else{txt.style.color="SlateGray";userChoice.target.style.background ="WhiteSmoke";}
 
     hearts(result,win,lose);
 }
