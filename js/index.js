@@ -79,27 +79,35 @@ function choice (userChoice){
 }
 
 function hearts(result, win, lose){
-    var hearts = document.querySelectorAll('.fa-heart');
+  var hearts = document.querySelectorAll('.fa-heart');
 
-    if(result == win){
-      document.querySelectorAll('#c-hearts li .fa-heart')[computer_hearts++].style.color="#1D1D1D";
-    }
-    if(result == lose){
-      document.querySelectorAll('#u-hearts li .fa-heart')[ur_hearts++].style.color="#1D1D1D";
-    }
+  if(result == win){
+    document.querySelectorAll('#c-hearts li .fa-heart')[computer_hearts++].style.color="#1D1D1D";
+  }
+  if(result == lose){
+    document.querySelectorAll('#u-hearts li .fa-heart')[ur_hearts++].style.color="#1D1D1D";
+  }
 
-    if(computer_hearts == 3 || ur_hearts == 3){
-      if(computer_hearts == 3 && ur_hearts < 3){
-        alert('You are a winner!');
-      }
-      else{alert('You are a losser!')}
-        for(i = 0; i < hearts.length; i++){
-          hearts[i].style.color="pink";
-        }
-        ur_hearts = 0; 
-        computer_hearts = 0;
-    }  
-    return showresult(result);
+  if(computer_hearts == 3 || ur_hearts == 3){
+    if(computer_hearts == 3 && ur_hearts < 3){
+      alert('You are a winner!');
+    }
+    else {
+      alert('You are a losser!')
+    }
+    resetEnv();
+  }  
+  return showresult(result);
+}
+
+function resetEnv() {
+  var hearts = document.querySelectorAll('.fa-heart');
+  for(i = 0; i < hearts.length; i++){
+      hearts[i].style.color="pink";
+    }
+  ur_hearts = 0; 
+  computer_hearts = 0;
+  prev_computere_choice = "";
 }
 
 function showresult (result){
