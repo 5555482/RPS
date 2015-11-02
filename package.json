@@ -1,0 +1,25 @@
+{
+  "name": "rps",
+  "version": "1.0.0",
+  "description": "![Picture 1](css/view.png)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/5555482/RPS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/5555482/RPS/issues"
+  },
+  "homepage": "https://github.com/5555482/RPS#readme",
+  "devDependencies": {
+    "bower": "^1.6.5",
+    "grunt": "^0.4.5",
+    "grunt-karma": "^0.12.1",
+    "karma": "^0.13.14"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "RPS",
+  "version": "0.0.0",
+  "homepage": "https://github.com/5555482/RPS",
+  "authors": [
+    "Natalia Antonova <5555482@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "karma": "~0.4.6"
+  }
+}
