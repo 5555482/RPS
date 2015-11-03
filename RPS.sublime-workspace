@@ -1,0 +1,725 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"al",
+				"aldgate"
+			],
+			[
+				"ran",
+				"randomComputerChoice"
+			],
+			[
+				"prev",
+				"prev_computere_choice"
+			],
+			[
+				"ra",
+				"randomComputerChoice"
+			],
+			[
+				"computer",
+				"computerChoice"
+			],
+			[
+				"co",
+				"computerChoice"
+			],
+			[
+				"call",
+				"callback"
+			],
+			[
+				"i",
+				"insert"
+			],
+			[
+				"C",
+				"Collection"
+			],
+			[
+				"s",
+				"style	Attr"
+			],
+			[
+				"pr",
+				"price"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"b",
+				"background"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"fo",
+				"font-size"
+			],
+			[
+				"font",
+				"font-family"
+			],
+			[
+				"ba",
+				"background-size"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"fill",
+				"fill_in"
+			],
+			[
+				"cli",
+				"click_link"
+			],
+			[
+				"click",
+				"click_button"
+			],
+			[
+				"have",
+				"have_content"
+			],
+			[
+				"re",
+				"restaurants"
+			],
+			[
+				"rest",
+				"restaurant"
+			],
+			[
+				"password",
+				"password_token"
+			],
+			[
+				"pas",
+				"password_confirmation"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"password_",
+				"password_token"
+			],
+			[
+				"fe",
+				"feature"
+			],
+			[
+				"req",
+				"require"
+			],
+			[
+				"user",
+				"username"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"temp",
+				"temperature"
+			],
+			[
+				"colo",
+				"colour"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"mess",
+				"message"
+			],
+			[
+				"me",
+				"messages"
+			],
+			[
+				"mes",
+				"messages"
+			],
+			[
+				"messa",
+				"messages"
+			],
+			[
+				"M",
+				"Message"
+			],
+			[
+				"choi",
+				"Choices"
+			],
+			[
+				"curren",
+				"current_player"
+			],
+			[
+				"current",
+				"current_player"
+			],
+			[
+				"pl",
+				"place_ship"
+			],
+			[
+				"ship",
+				"place_ship"
+			],
+			[
+				"land",
+				"land_plane"
+			],
+			[
+				"lan",
+				"land_plane"
+			],
+			[
+				"be_",
+				"be_flying"
+			],
+			[
+				"take",
+				"take_off"
+			],
+			[
+				"is",
+				"is_expected"
+			],
+			[
+				"be",
+				"be_landed"
+			],
+			[
+				"De",
+				"DEFAULT_CAPACITY"
+			],
+			[
+				"BikeContain",
+				"BikeContainerTest"
+			],
+			[
+				"sub",
+				"subject"
+			],
+			[
+				"D",
+				"DockinStation"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "var txt = document.querySelector('#resultText');\nvar ur_hearts = 0; \nvar computer_hearts = 0; \nvar prev_computere_choice = randomComputerChoice();\n\nfunction tacticalComputerChoise (prevChoice){\n  var result = \"scissors\";\n  if (prevChoice == \"scissors\") {\n      result = \"rock\";\n    }\n    else if (prevChoice == \"rock\") {\n      result = \"paper\";\n    }\n    return result;\n}\n\nfunction randomComputerChoice() {\n  var computerChoice = Math.random();\n  if (computerChoice < 0.34) {\n    computerChoice = \"rock\";\n  }\n  else if (computerChoice <= 0.67) {\n    computerChoice = \"paper\";\n  }\n  else {\n    computerChoice = \"scissors\";\n  }\n  return computerChoice;\n}\n\nfunction choice (userChoice){\n    var result;\n    var computerChoice;\n    var isTactical = document.getElementById(\"tactical\").checked;\n    if (isTactical) {\n      computerChoice = tacticalComputerChoise(prev_computere_choice);\n    }\n    else {\n      computerChoice = randomComputerChoice();\n    }\n    prev_computere_choice = computerChoice;\n    var uChoice = userChoice.target.id;\n\n    //-------------\n    var win = 'Computer: ' + computerChoice + '<span> You win!</span>';\n    var lose = 'Computer: ' + computerChoice + '<span> Computer wins!</span>';\n    var equality = 'Computer choose also '+ computerChoice + '<span> Draw.</span>';\n    //-------------   \n    if(computerChoice == \"rock\"){\n         if (uChoice == \"paper\"){result = win;}\n         else if (uChoice == \"scissors\"){result = lose;}\n         else {result = equality;}\n    }\n    else if(computerChoice == \"paper\"){\n         if (uChoice == \"rock\"){result = lose;}\n         else if (uChoice == \"scissors\"){result = win;}\n         else {result = equality;}\n    }\n    else if(computerChoice == \"scissors\"){\n         if (uChoice == \"rock\"){result = win;}\n         else if (uChoice == \"paper\"){result = lose;}\n         else {result = equality;}\n    }\n\n    var clearColor = setTimeout(function(){userChoice.target.style.background =\"none\";},1000);\n    if(result == win ){\n      txt.style.color=\"SlateGray\"; \n      userChoice.target.style.background =\"WhiteSmoke\"; \n      clearColor;\n  }\n    else if(result == lose){\n      txt.style.color=\"SlateGray\";\n      userChoice.target.style.background =\"WhiteSmoke\";\n      clearColor;\n    }\n    else{txt.style.color=\"SlateGray\";userChoice.target.style.background =\"WhiteSmoke\";}\n\n    hearts(result,win,lose);\n}\n\nfunction hearts(result, win, lose){\n  var hearts = document.querySelectorAll('.fa-heart');\n\n  if(result == win){\n    document.querySelectorAll('#c-hearts li .fa-heart')[computer_hearts++].style.color=\"#1D1D1D\";\n  }\n  if(result == lose){\n    document.querySelectorAll('#u-hearts li .fa-heart')[ur_hearts++].style.color=\"#1D1D1D\";\n  }\n\n  if(computer_hearts == 3 || ur_hearts == 3){\n    if(computer_hearts == 3 && ur_hearts < 3){\n      alert('You are a winner!');\n    }\n    else {\n      alert('You are a losser!')\n    }\n    resetEnv();\n  }  \n  return showresult(result);\n}\n\nfunction resetEnv() {\n  var hearts = document.querySelectorAll('.fa-heart');\n  for(i = 0; i < hearts.length; i++){\n      hearts[i].style.color=\"pink\";\n    }\n  ur_hearts = 0; \n  computer_hearts = 0;\n  prev_computere_choice = \"\";\n}\n\nfunction showresult (result){\n  txt.innerHTML = result;\n}",
+			"file": "index.js",
+			"file_size": 3224,
+			"file_write_time": 130898510180000000,
+			"settings":
+			{
+				"buffer_size": 3224,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test/basicSpec.js",
+			"settings":
+			{
+				"buffer_size": 1988,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 1385,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 107.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"haml",
+				"Set Syntax: Ruby Haml"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"scala",
+				"Set Syntax: Scala"
+			],
+			[
+				"Sca",
+				"Set Syntax: Scala"
+			],
+			[
+				"Scala",
+				"Set Syntax: Scala"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Syn Ru",
+				"Set Syntax: Ruby"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/antonona/Projects/RPS",
+		"/Users/antonona/Projects/RPS/test"
+	],
+	"file_history":
+	[
+		"/Users/antonona/Projects/RPS/test/basicSpec.js",
+		"/Users/antonona/Projects/RPS/bower.json",
+		"/Users/antonona/Projects/RPS/tests/basicSpec.js",
+		"/Users/antonona/Projects/RPS/Gruntfile.js",
+		"/Users/antonona/Projects/RPS/karma.conf.js",
+		"/Users/antonona/Projects/javascript-tests/karma.conf.js",
+		"/Users/antonona/Projects/javascript-tests/test/clone-object.js",
+		"/Users/antonona/Projects/javascript-tests/test/flatten-array.js",
+		"/Users/antonona/Projects/javascript-tests/test/scoping.js",
+		"/Users/antonona/Projects/battleships_web/spec/features/starting_a_game_spec.rb",
+		"/Users/antonona/Projects/RPS/index.html",
+		"/Users/antonona/Projects/rps-refactor/spec/spec_helper.rb",
+		"/Users/antonona/Projects/rps-refactor/features/play_game.feature",
+		"/Users/antonona/Projects/RPS/js/index.js",
+		"/Users/antonona/Projects/lettered_circles/README.md",
+		"/Users/antonona/Projects/lettered_circles/main.js",
+		"/Users/antonona/Projects/lettered_circles/css/style.css",
+		"/Users/antonona/Projects/lettered_circles/index.html",
+		"/Users/antonona/Desktop/show.html",
+		"/Users/antonona/Projects/lettered_circles/js/index.js",
+		"/Users/antonona/Desktop/show.webarchive",
+		"/Users/antonona/Projects/RPS/README.md",
+		"/Users/antonona/Projects/RPS/README.txt",
+		"/Users/antonona/Projects/object-calisthenics-beach-volleyball-edition/spec/team_spec.rb",
+		"/Users/antonona/Projects/object-calisthenics-beach-volleyball-edition/lib/team.rb",
+		"/Users/antonona/Projects/object-calisthenics-beach-volleyball-edition/spec/integration_spec.rb",
+		"/Users/antonona/Projects/RPS/css/style.css",
+		"/Users/antonona/Projects/rock_paper_scissors/index.html",
+		"/Users/antonona/Projects/rock_paper_scissors/README.txt",
+		"/Users/antonona/Projects/rock_paper_scissors/css/style.css",
+		"/Users/antonona/Projects/Rock-Paper-Scissors/js/index.js",
+		"/Users/antonona/Projects/Rock-Paper-Scissors/rock-paper-scissors.css",
+		"/Users/antonona/Projects/Rock-Paper-Scissors/rock-paper-scissors.html",
+		"/Users/antonona/Projects/Rock-Paper-Scissors/rock-paper-scissors.js",
+		"/Users/antonona/Downloads/sp-ruby_exercise-2015/README.txt",
+		"/Users/antonona/Projects/list_log/spec/list_log_spec.rb",
+		"/Users/antonona/Projects/meteorshop/tests/jasmine/client/unit/messages.spec.js",
+		"/Users/antonona/Projects/meteorshop/tests/jasmine/client/unit/meteor-stubs.js",
+		"/Users/antonona/Projects/meteorshop/tests/jasmine/client/unit/template-stubs.js",
+		"/Users/antonona/Projects/meteorshop/packages/tests-proxy/package.js",
+		"/Users/antonona/Projects/meteorshop/.meteor/packages",
+		"/Users/antonona/Projects/meteorshop/tests/cucumber/features/support/hooks.js",
+		"/Users/antonona/Projects/meteorshop/tests/cucumber/features/user.js",
+		"/Users/antonona/Projects/meteorshop/collections.js",
+		"/Users/antonona/Projects/meteorshop/client/meteorshop.html",
+		"/Users/antonona/Projects/meteorshop/tests/cucumber/features/sample.feature",
+		"/Users/antonona/Projects/meteorshop/tests/cucumber/features/step_definitions/steps.js",
+		"/Users/antonona/Projects/meteorshop/tests/posts.js",
+		"/Users/antonona/Projects/meteorshop/client/cart/cart.js",
+		"/Users/antonona/Projects/meteorshop/server/startup.js",
+		"/Users/antonona/Projects/meteorshop/.idea/encodings.xml",
+		"/Users/antonona/Projects/meteorshop/.idea/meteorshop.iml",
+		"/Users/antonona/Projects/meteorshop/.idea/misc.xml",
+		"/Users/antonona/Projects/meteorshop/.idea/modules.xml",
+		"/Users/antonona/Projects/meteorshop/.idea/workspace.xml",
+		"/Users/antonona/Projects/meteorshop/.idea/vcs.xml",
+		"/Users/antonona/Projects/meteorshop/.idea/.name",
+		"/Users/antonona/Projects/meteorshop/client/cart/cart.html",
+		"/Users/antonona/Projects/meteorshop/README.md",
+		"/Users/antonona/Projects/meteorshop/.meteor/local/build/star.json",
+		"/Users/antonona/Projects/meteorshop/client/products/products.css",
+		"/Users/antonona/Projects/meteorshop/client/products/products.html",
+		"/Users/antonona/Projects/meteorshop/client/meteorshop.js",
+		"/Users/antonona/Projects/meteorshop/client/products/products.js",
+		"/Users/antonona/Projects/clothing_retailer/client/cart/cart.html",
+		"/Users/antonona/Projects/clothing_retailer/client/products/products.html",
+		"/Users/antonona/Projects/clothing_retailer/client/categories/categories.html",
+		"/Users/antonona/Projects/clothing_retailer/server/server.js",
+		"/Users/antonona/Projects/clothing_retailer/client/layout/layout.html",
+		"/Users/antonona/Projects/clothing_retailer/client/navbar/navbar.html",
+		"/Users/antonona/Projects/clothing_retailer/client/navbar/navbar.css",
+		"/Users/antonona/Projects/clothing_retailer/client/products/products.js",
+		"/Users/antonona/Projects/clothing_retailer/client/products/products.css",
+		"/Users/antonona/Projects/clothing_retailer/client/categories/categories.js",
+		"/Users/antonona/Projects/clothing_retailer/clothing_retailer.css",
+		"/Users/antonona/Projects/clothing_retailer/client/clothing_retailer.html",
+		"/Users/antonona/Projects/clothing_retailer/client/clothing_retailer.js",
+		"/Users/antonona/Projects/clothing_retailer/collections.js",
+		"/Users/antonona/Projects/retailer/app/views/products/index.html.erb",
+		"/Users/antonona/Projects/retailer/app/views/products/show.html.erb",
+		"/Users/antonona/Projects/retailer/app/views/cart/index.html.erb",
+		"/Users/antonona/Projects/retailer/config/routes.rb",
+		"/Users/antonona/Projects/retailer/app/views/layouts/application.html.erb",
+		"/Users/antonona/Projects/retailer/app/controllers/cart_controller.rb",
+		"/Users/antonona/Projects/retailer/Gemfile",
+		"/Users/antonona/Projects/retailer/app/assets/stylesheets/application.css",
+		"/Users/antonona/Projects/ispy-game/www/css/style.css",
+		"/Users/antonona/Projects/ispy-game/ionic.project",
+		"/Users/antonona/Projects/ispy-game/www/js/controllers.js",
+		"/Users/antonona/Projects/ispy-game/www/index.html",
+		"/Users/antonona/Projects/ispy-game/www/templates/tab-photoalbum.html",
+		"/Users/antonona/Projects/ispy-game/www/img/the_shard_map.gif",
+		"/Users/antonona/Projects/ionic-example-cordova-camera/ionic.project",
+		"/Users/antonona/Projects/ispy-game456/www/templates/tab-photoalbum.html",
+		"/Users/antonona/Projects/ispy-game/test/e2e/views.spec.js",
+		"/Users/antonona/Projects/ispy-game/www/templates/tab-home.html",
+		"/Users/antonona/Projects/ispy-game/www/templates/cluepopover.html",
+		"/Users/antonona/Projects/ispy-game/test/protractor.config.js",
+		"/Users/antonona/Projects/ispy-game/.bowerrc",
+		"/Users/antonona/Projects/ionic-example-cordova-camera/www/js/app.js",
+		"/Users/antonona/Projects/ionic-example-cordova-camera/www/js/services.js",
+		"/Users/antonona/Projects/ionic-example-cordova-camera/www/js/controllers.js",
+		"/Users/antonona/Projects/ispy-game123/www/templates/tab-home.html",
+		"/Users/antonona/Projects/ispy-game/www/js/services.js",
+		"/Users/antonona/Projects/ispy-game/www/js/app.js",
+		"/Users/antonona/Projects/ionic-example-cordova-camera/www/index.html",
+		"/Users/antonona/Projects/popup-experiment/www/css/style.css",
+		"/Users/antonona/Projects/popup-experiment/www/templates/tab-home.html",
+		"/Users/antonona/Projects/ispy-game/www/templates/tabs.html",
+		"/Users/antonona/Projects/ispy-game/hooks/after_prepare/011_upload_platform_config.js",
+		"/Users/antonona/Projects/ispy-game/www/lib/ionic/js/ionic.js",
+		"/Users/antonona/Projects/IonicCameraProto/ionic.project",
+		"/Users/antonona/Projects/IonicCameraProto/www/js/app.js",
+		"/Users/antonona/Projects/IonicCameraProto/www/index.html",
+		"/Users/antonona/Projects/devdactic-images/index.html",
+		"/Users/antonona/Projects/Ispywithmy/index.html",
+		"/Users/antonona/Projects/Ispywithmy/www/js/app.js",
+		"/Users/antonona/Projects/IonicCameraProto/test/protractor.config.js",
+		"/Users/antonona/Projects/devdactic-images/www/js/app.js",
+		"/Users/antonona/Projects/London_eye/index.html",
+		"/Users/antonona/Projects/devdactic-images/www/index.html",
+		"/Users/antonona/Projects/ionic-tutorial-master/server/server.js",
+		"/Users/antonona/Projects/London_eye/cont.js",
+		"/Users/antonona/Projects/ionic-tutorial-master/server/routes/sessions.js",
+		"/Users/antonona/Projects/ionic-tutorial-master/resources/openfb.js",
+		"/Users/antonona/Projects/tutorial_you/second_page.html",
+		"/Users/antonona/Projects/tutorial_you/index.html",
+		"/Users/antonona/Projects/tutorial_you/main.css"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"function",
+			"imge",
+			"ap: 'img/",
+			"image: 'img/",
+			"====",
+			"===",
+			">>>>",
+			">>>",
+			">>>>>>>>",
+			"HEAD",
+			"Shard",
+			"input",
+			"index.html",
+			"readme",
+			"build_review",
+			"login_as",
+			"chose_a_city",
+			"  </",
+			"user_name",
+			"strike can hit a ship placed on the",
+			"end",
+			"placed",
+			"end",
+			"wets_bed",
+			"end",
+			"number",
+			"bin",
+			"^ls"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3224,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								372,
+								372
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1257.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "test/basicSpec.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1988,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								95,
+								95
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1385,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 100.0
+	},
+	"pinned_build_system": "",
+	"project": "RPS.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"restaurant_",
+				"app/models/restaurant_spec.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 243.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
