@@ -112,4 +112,5 @@ function resetEnv() {
 
 function showresult (result){
   txt.innerHTML = result;
+  return result;
 }

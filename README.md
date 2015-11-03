@@ -35,5 +35,5 @@ open index.html
 ##To run the tests:
 
 ```
-karma start test/karma.conf.js
+grunt
 ```
