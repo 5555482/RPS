@@ -28,39 +28,48 @@ function randomComputerChoice() {
   return computerChoice;
 }
 
-function choice (userChoice){
-    var result;
-    var computerChoice;
-    var isTactical = document.getElementById("tactical").checked;
-    if (isTactical) {
-      computerChoice = tacticalComputerChoise(prev_computere_choice);
-    }
-    else {
-      computerChoice = randomComputerChoice();
-    }
-    prev_computere_choice = computerChoice;
-    var uChoice = userChoice.target.id;
+function calcResult(uChoice, computerChoice, win, lose, eq) {
+  var result;
+  if(computerChoice == "rock"){
+    if (uChoice == "paper"){result = win;}
+    else if (uChoice == "scissors"){result = lose;}
+    else {result = eq;}
+  }
+  else if(computerChoice == "paper"){
+    if (uChoice == "rock"){result = lose;}
+    else if (uChoice == "scissors"){result = win;}
+    else {result = eq;}
+  }
+  else if(computerChoice == "scissors"){
+    if (uChoice == "rock"){result = win;}
+    else if (uChoice == "paper"){result = lose;}
+    else {result = eq;}
+  }
+  return result;
+}
 
+function compChoice(isTactical) {
+  var computerChoice;
+  if (isTactical) {
+    computerChoice = tacticalComputerChoise(prev_computere_choice);
+  }
+  else {
+    computerChoice = randomComputerChoice();
+  }
+  prev_computere_choice = computerChoice;
+  return computerChoice;
+}
+
+function play(userChoice){
+    var isTactical = document.getElementById("tactical").checked;
+    var computerChoice = compChoice(isTactical);
     //-------------
     var win = 'Computer: ' + computerChoice + '<span> You win!</span>';
     var lose = 'Computer: ' + computerChoice + '<span> Computer wins!</span>';
     var equality = 'Computer choose also '+ computerChoice + '<span> Draw.</span>';
     //-------------   
-    if(computerChoice == "rock"){
-         if (uChoice == "paper"){result = win;}
-         else if (uChoice == "scissors"){result = lose;}
-         else {result = equality;}
-    }
-    else if(computerChoice == "paper"){
-         if (uChoice == "rock"){result = lose;}
-         else if (uChoice == "scissors"){result = win;}
-         else {result = equality;}
-    }
-    else if(computerChoice == "scissors"){
-         if (uChoice == "rock"){result = win;}
-         else if (uChoice == "paper"){result = lose;}
-         else {result = equality;}
-    }
+    var uChoice = userChoice.target.id;
+    var result = calcResult(uChoice, computerChoice, win, lose, equality);
 
     var clearColor = setTimeout(function(){userChoice.target.style.background ="none";},1000);
     if(result == win ){
@@ -112,4 +121,5 @@ function resetEnv() {
 
 function showresult (result){
   txt.innerHTML = result;
+  return result;
 }

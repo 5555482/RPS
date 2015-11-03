@@ -6,14 +6,19 @@ describe('Tactical computer choise ', function() {
   });
 });
 
+describe("scissors", function(){
 
-// describe('random Computer Choice', function() {
-//   it('random Computer Choice', function() {
-//     expect(tacticalComputerChoise("scissors")).toBe("rock");
-//     expect(tacticalComputerChoise("paper")).toBe("scissors");
-//     expect(tacticalComputerChoise("rock")).toBe("paper");
-//   });
-// });
+  it('should beat paper', function() {
+        expect(calcResult("paper", "rock", "bingo!", "fuckup", "another fuckup")).toBe("bingo!");
+  });
+  // it('rock beat scissors', function() {
+  //       choiceInt('scissors', false);
+  //       randomComputerChoice('rock');
+  //       expect(showresult).toBe("Computer wins!");
+  // });
+});
+
+
 
 // describe('scissors', function() {
 //   beforeEach(fucntion() {
@@ -23,19 +28,21 @@ describe('Tactical computer choise ', function() {
 //   afterEach(function(){
 //     clearMyFixtures();
 //   });
+
+
+
+
+//   it('should beat paper', function() {
+//         choice('scissors');
+//         randomComputerChoice('paper');
+//         expect(showresult).toBe("You win!");
+//   });
+//   it('rock beat scissors', function() {
+//         choice('scissors');
+//         randomComputerChoice('rock');
+//         expect(showresult).toBe("Computer wins!");
+//   });
 // });
-
-
-  it('should beat paper', function() {
-        choice('scissors');
-        randomComputerChoice('paper');
-        expect(showresult).toBe("You win!");
-  });
-  it('rock beat scissors', function() {
-        choice('scissors');
-        randomComputerChoice('rock');
-        expect(showresult).toBe("Computer wins!");
-  });
 
 
   
