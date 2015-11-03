@@ -6,43 +6,32 @@ describe('Tactical computer choise ', function() {
   });
 });
 
-describe("scissors", function(){
+describe("paper", function(){
 
-  it('should beat paper', function() {
-        expect(calcResult("paper", "rock", "bingo!", "fuckup", "another fuckup")).toBe("bingo!");
+  it('paper beat rock', function() {
+        expect(calcResult("paper", "rock", "You win!", "Computer wins!", "Draw.")).toBe("You win!");
   });
-  // it('rock beat scissors', function() {
-  //       choiceInt('scissors', false);
-  //       randomComputerChoice('rock');
-  //       expect(showresult).toBe("Computer wins!");
-  // });
+  it('scissors beat paper', function() {
+        expect(calcResult("paper", "scissors", "You win!", "Computer wins!", "Draw.")).toBe("Computer wins!");
+  });
+  it('paper draw paper', function() {
+        expect(calcResult("paper", "paper", "You win!", "Computer wins!", "Draw.")).toBe("Draw.");
+  });
 });
 
+describe("rock", function(){
 
+  it('paper beat rock', function() {
+        expect(calcResult("rock", "paper", "You win!", "Computer wins!", "Draw.")).toBe("Computer wins!");
+  });
+  it('rock beat scissors', function() {
+        expect(calcResult("rock", "scissors", "You win!", "Computer wins!", "Draw.")).toBe("You win!");
+  });
+  it('rock draw rock', function() {
+        expect(calcResult("rock", "rock", "You win!", "Computer wins!", "Draw.")).toBe("Draw.");
+  });
+});
 
-// describe('scissors', function() {
-//   beforeEach(fucntion() {
-//     addFixture("<input type='checkbox' id='tactical'>");
-//   });
-
-//   afterEach(function(){
-//     clearMyFixtures();
-//   });
-
-
-
-
-//   it('should beat paper', function() {
-//         choice('scissors');
-//         randomComputerChoice('paper');
-//         expect(showresult).toBe("You win!");
-//   });
-//   it('rock beat scissors', function() {
-//         choice('scissors');
-//         randomComputerChoice('rock');
-//         expect(showresult).toBe("Computer wins!");
-//   });
-// });
 
 
   
