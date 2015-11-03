@@ -35,5 +35,7 @@ open index.html
 ##To run the tests:
 
 ```
+npm install -g grunt-cli
+npm install grunt --save-dev
 grunt
 ```
