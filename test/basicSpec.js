@@ -32,6 +32,19 @@ describe("rock", function(){
   });
 });
 
+describe("scissors", function(){
+
+  it('scissors beat paper', function() {
+        expect(calcResult("scissors", "paper", "You win!", "Computer wins!", "Draw.")).toBe("You win!");
+  });
+  it('rock beat scissors', function() {
+        expect(calcResult("scissors", "rock", "You win!", "Computer wins!", "Draw.")).toBe("Computer wins!");
+  });
+  it('scissors draw scissors', function() {
+        expect(calcResult("scissors", "scissors", "You win!", "Computer wins!", "Draw.")).toBe("Draw.");
+  });
+});
+
 
 
   
