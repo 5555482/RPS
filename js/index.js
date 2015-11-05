@@ -6,12 +6,12 @@ var prev_computere_choice = randomComputerChoice();
 function tacticalComputerChoise (prevChoice){
   var result = "scissors";
   if (prevChoice == "scissors") {
-      result = "rock";
-    }
-    else if (prevChoice == "rock") {
-      result = "paper";
-    }
-    return result;
+    result = "rock";
+  }
+  else if (prevChoice == "rock") {
+    result = "paper";
+  }
+  return result;
 }
 
 function randomComputerChoice() {
@@ -61,8 +61,8 @@ function compChoice(isTactical) {
 }
 
 function play(userChoice){
-    var isTactical = document.getElementById("tactical").checked;
-    var computerChoice = compChoice(isTactical);
+  var isTactical = document.getElementById("tactical").checked;
+  var computerChoice = compChoice(isTactical);
     //-------------
     var win = 'Computer: ' + computerChoice + '<span> You win!</span>';
     var lose = 'Computer: ' + computerChoice + '<span> Computer wins!</span>';
@@ -76,7 +76,7 @@ function play(userChoice){
       txt.style.color="SlateGray"; 
       userChoice.target.style.background ="WhiteSmoke"; 
       clearColor;
-  }
+    }
     else if(result == lose){
       txt.style.color="SlateGray";
       userChoice.target.style.background ="WhiteSmoke";
@@ -85,41 +85,41 @@ function play(userChoice){
     else{txt.style.color="SlateGray";userChoice.target.style.background ="WhiteSmoke";}
 
     hearts(result,win,lose);
-}
-
-function hearts(result, win, lose){
-  var hearts = document.querySelectorAll('.fa-heart');
-
-  if(result == win){
-    document.querySelectorAll('#c-hearts li .fa-heart')[computer_hearts++].style.color="#1D1D1D";
-  }
-  if(result == lose){
-    document.querySelectorAll('#u-hearts li .fa-heart')[ur_hearts++].style.color="#1D1D1D";
   }
 
-  if(computer_hearts == 3 || ur_hearts == 3){
-    if(computer_hearts == 3 && ur_hearts < 3){
-      alert('You are a winner!');
-    }
-    else {
-      alert('You are a losser!')
-    }
-    resetEnv();
-  }  
-  return showresult(result);
-}
+  function hearts(result, win, lose){
+    var hearts = document.querySelectorAll('.fa-heart');
 
-function resetEnv() {
-  var hearts = document.querySelectorAll('.fa-heart');
-  for(i = 0; i < hearts.length; i++){
+    if(result == win){
+      document.querySelectorAll('#c-hearts li .fa-heart')[computer_hearts++].style.color="#1D1D1D";
+    }
+    if(result == lose){
+      document.querySelectorAll('#u-hearts li .fa-heart')[ur_hearts++].style.color="#1D1D1D";
+    }
+
+    if(computer_hearts == 3 || ur_hearts == 3){
+      if(computer_hearts == 3 && ur_hearts < 3){
+        alert('You are a winner!');
+      }
+      else {
+        alert('You are a losser!')
+      }
+      resetEnv();
+    }  
+    return showresult(result);
+  }
+
+  function resetEnv() {
+    var hearts = document.querySelectorAll('.fa-heart');
+    for(i = 0; i < hearts.length; i++){
       hearts[i].style.color="pink";
     }
-  ur_hearts = 0; 
-  computer_hearts = 0;
-  prev_computere_choice = "";
-}
+    ur_hearts = 0; 
+    computer_hearts = 0;
+    prev_computere_choice = "";
+  }
 
-function showresult (result){
-  txt.innerHTML = result;
-  return result;
-}
+  function showresult (result){
+    txt.innerHTML = result;
+    return result;
+  }

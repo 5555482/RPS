@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html >
-  <head>
-    <meta charset="UTF-8">
-    <title>rock, paper, scissors</title>
-    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+<head>
+  <meta charset="UTF-8">
+  <title>rock, paper, scissors</title>
+  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
 
-        <link rel="stylesheet" href="css/style.css">
-    
-  </head>
+  <link rel="stylesheet" href="css/style.css">
+  
+</head>
 
-  <body>
+<body>
 
-     <ul id="user-choice">
-    <li onclick="play(event)" id="rock">
-        <img src="css/rock.png" alt="Rock" />
-    </li>
-    <li onclick="play(event);" id="paper">
-        <img src="css/paper.png" alt="Paper" />
-    </li>
-    <li onclick="play(event);" id="scissors">
-        <img src="css/scissors.png" alt="Scissors" />
-    </li>
+ <ul id="user-choice">
+  <li onclick="play(event)" id="rock">
+    <img src="css/rock.png" alt="Rock" />
+  </li>
+  <li onclick="play(event);" id="paper">
+    <img src="css/paper.png" alt="Paper" />
+  </li>
+  <li onclick="play(event);" id="scissors">
+    <img src="css/scissors.png" alt="Scissors" />
+  </li>
 </ul>  
 <p id="resultText">Please choose rock, paper or scissors.</p>
 <ul id="scores">
-    <li>
-        <i class="fa fa-male"></i>
-        <ul id="u-hearts">
-          <li><i class="fa fa-heart"></i></li>
-          <li><i class="fa fa-heart"></i></li>
-          <li><i class="fa fa-heart"></i></li>
-        </ul>
+  <li>
+    <i class="fa fa-male"></i>
+    <ul id="u-hearts">
+      <li><i class="fa fa-heart"></i></li>
+      <li><i class="fa fa-heart"></i></li>
+      <li><i class="fa fa-heart"></i></li>
+    </ul>
     </li><!-- whitespace
- --><li>
-        <i class="fa fa-laptop"></i>
-        <ul id="c-hearts">
-            <li><i class="fa fa-heart"></i></li>
-            <li><i class="fa fa-heart"></i></li>
-            <li><i class="fa fa-heart"></i></li>
-        </ul>
-    </li>
+  --><li>
+  <i class="fa fa-laptop"></i>
+  <ul id="c-hearts">
+    <li><i class="fa fa-heart"></i></li>
+    <li><i class="fa fa-heart"></i></li>
+    <li><i class="fa fa-heart"></i></li>
+  </ul>
+</li>
 </ul>
-    
-        <script src="js/index.js"></script>
 
-    <input onclick="resetEnv();" type="checkbox" id="tactical"> Tactical <br>
-    
-    
-  </body>
+<script src="js/index.js"></script>
+
+<input onclick="resetEnv();" type="checkbox" id="tactical"> Tactical <br>
+
+
+</body>
 </html>

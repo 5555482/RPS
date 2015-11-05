@@ -9,43 +9,42 @@ describe('Tactical computer choise ', function() {
 describe("paper", function(){
 
   it('paper beat rock', function() {
-        expect(calcResult("paper", "rock", "You win!", "Computer wins!", "Draw.")).toBe("You win!");
+    expect(calcResult("paper", "rock", "You win!", "Computer wins!", "Draw.")).toBe("You win!");
   });
   it('scissors beat paper', function() {
-        expect(calcResult("paper", "scissors", "You win!", "Computer wins!", "Draw.")).toBe("Computer wins!");
+    expect(calcResult("paper", "scissors", "You win!", "Computer wins!", "Draw.")).toBe("Computer wins!");
   });
   it('paper draw paper', function() {
-        expect(calcResult("paper", "paper", "You win!", "Computer wins!", "Draw.")).toBe("Draw.");
+    expect(calcResult("paper", "paper", "You win!", "Computer wins!", "Draw.")).toBe("Draw.");
   });
 });
 
 describe("rock", function(){
 
   it('paper beat rock', function() {
-        expect(calcResult("rock", "paper", "You win!", "Computer wins!", "Draw.")).toBe("Computer wins!");
+    expect(calcResult("rock", "paper", "You win!", "Computer wins!", "Draw.")).toBe("Computer wins!");
   });
   it('rock beat scissors', function() {
-        expect(calcResult("rock", "scissors", "You win!", "Computer wins!", "Draw.")).toBe("You win!");
+    expect(calcResult("rock", "scissors", "You win!", "Computer wins!", "Draw.")).toBe("You win!");
   });
   it('rock draw rock', function() {
-        expect(calcResult("rock", "rock", "You win!", "Computer wins!", "Draw.")).toBe("Draw.");
+    expect(calcResult("rock", "rock", "You win!", "Computer wins!", "Draw.")).toBe("Draw.");
   });
 });
 
 describe("scissors", function(){
 
   it('scissors beat paper', function() {
-        expect(calcResult("scissors", "paper", "You win!", "Computer wins!", "Draw.")).toBe("You win!");
+    expect(calcResult("scissors", "paper", "You win!", "Computer wins!", "Draw.")).toBe("You win!");
   });
   it('rock beat scissors', function() {
-        expect(calcResult("scissors", "rock", "You win!", "Computer wins!", "Draw.")).toBe("Computer wins!");
+    expect(calcResult("scissors", "rock", "You win!", "Computer wins!", "Draw.")).toBe("Computer wins!");
   });
   it('scissors draw scissors', function() {
-        expect(calcResult("scissors", "scissors", "You win!", "Computer wins!", "Draw.")).toBe("Draw.");
+    expect(calcResult("scissors", "scissors", "You win!", "Computer wins!", "Draw.")).toBe("Draw.");
   });
 });
 
 
 
-  
- 
+

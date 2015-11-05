@@ -18,20 +18,20 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'test/**/*.js',
-      'js/*.js',
-      '*.html'
+    'test/**/*.js',
+    'js/*.js',
+    '*.html'
     ],
 
-exclude: [
-      
+    exclude: [
+    
     ],
 
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-    
+      
     },
 
 
@@ -56,7 +56,7 @@ exclude: [
 
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
-     browsers: browsers,
+    browsers: browsers,
 
 
     // Continuous Integration mode

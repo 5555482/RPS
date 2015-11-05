@@ -22,11 +22,11 @@ ul{
   transition:background 1s;
 }
 #user-choice li:hover{
-    
+  
 }
 #user-choice li img{
-    vertical-align:middle;
-    pointer-events: none;
+  vertical-align:middle;
+  pointer-events: none;
 }
 #resultText{
   margin-top:40px;
