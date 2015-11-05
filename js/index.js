@@ -89,7 +89,6 @@ function play(userChoice){
 
   function hearts(result, win, lose){
     var hearts = document.querySelectorAll('.fa-heart');
-
     if(result == win){
       document.querySelectorAll('#c-hearts li .fa-heart')[computer_hearts++].style.color="#1D1D1D";
     }
